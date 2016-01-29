@@ -28,3 +28,17 @@ function filterArray (array, x) {
 
 var newPosArray = filterArray(numbers, pos);
 //console.log(newPosArray);
+
+
+//excercise 4
+function longestWord(string){
+    var array = string.split(' ')
+
+   return array.reduce(function (prev,curr){
+        if (prev.length > curr.length){
+            return prev
+        }
+        else {return curr}
+    });
+}
+//console.log(longestWord('tester test testing'))
