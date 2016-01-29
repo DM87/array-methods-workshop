@@ -63,8 +63,38 @@ function countVowels(string){
 var numbersArray = [1, 0, 2, 3, -4, -5, 6];
 
 function limits(array){
+    var lowes = array.reduce(function(acc, num){
+        if (acc < num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
+    var highes = array.reduce(function(acc, num){
+        if (acc > num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
+    var result = {
+        lowest: lowes,
+        highest: highes
+    }
+    return result
+}
+//console.log(limits(numbersArray))
+
+/*function limitsExp(array){
     var lowest = array.reduce(function(acc, num){
         if (acc < num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
+    var slowest = array.reduce(function(acc, num){
+        if (acc > lowest && acc < num) {
             return acc;
         } else {
             return num;
@@ -77,10 +107,47 @@ function limits(array){
             return num;
         }
     })
+    var shighest = array.reduce(function(acc, num){
+        if (acc < highest && acc > num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
     var result = {
         lowest: lowest,
-        highest: highest
+        secondLow: slowest,
+        highest: highest,
+        secondhighest: shighest
     }
     return result
-}
-console.log(limits(numbersArray))
+}*/
+
+//excercise 7 unable to complete/ get comprehendable help
+var numbersArray = [1, 0, 2, 3, -4, -5, 6];
+
+function limits2(array){
+    
+    var results = {
+        highest: -Infinity,
+        secondhighest: -Infinity,
+        lowest: Infinity,
+        secondLow: Infinity
+    };
+    
+    return array.reduce(function (acc, val){
+        if (val > acc.highest){
+            acc.secondhighest = acc.highest;
+            acc.highest = val;
+        } else if (val > acc.secondhighest) {
+            acc.secondhighest = val;
+        };
+        if (val < acc.lowest) {
+            acc.secondLow = acc.lowest;
+            acc.lowest = val;
+        } else if (val > acc.secondLow) {
+            acc.secondLow = val;    
+        }
+    }, results)}
+
+console.log(limits2(numbersArray))
