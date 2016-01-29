@@ -11,3 +11,9 @@ function printPositives(number){
 numbers.forEach(printPositives);
 
 //console.log(positives);
+
+function getPositives(number) {
+    return number > 0;
+}
+var positiveArray = numbers.filter(getPositives);
+console.log(positiveArray)
