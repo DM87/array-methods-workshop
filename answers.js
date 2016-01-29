@@ -58,3 +58,29 @@ function countVowels(string){
 }
 
 //console.log(countVowels('testing this sentence'));
+
+//excercise 6
+var numbersArray = [1, 0, 2, 3, -4, -5, 6];
+
+function limits(array){
+    var lowest = array.reduce(function(acc, num){
+        if (acc < num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
+    var highest = array.reduce(function(acc, num){
+        if (acc > num) {
+            return acc;
+        } else {
+            return num;
+        }
+    })
+    var result = {
+        lowest: lowest,
+        highest: highest
+    }
+    return result
+}
+console.log(limits(numbersArray))
