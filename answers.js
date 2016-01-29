@@ -42,3 +42,19 @@ function longestWord(string){
     });
 }
 //console.log(longestWord('tester test testing'))
+
+//excercise 5
+function countVowels(string){
+    var vowels = ['a','e','i','o','u'];
+    var array = string.split('');
+
+    
+    return array.reduce(function match(acc, letter) {
+        if (vowels.indexOf(letter) > 0) {
+        acc++
+        }
+        return acc;
+    },0);
+}
+
+//console.log(countVowels('testing this sentence'));
